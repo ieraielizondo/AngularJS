@@ -1,0 +1,23 @@
+<form class="well">	
+	<div class="form-group">
+		<label for="txtNombre" class="col-sm-2 form-label">Nombre:</label>
+		<div class="col-sm-10">
+			<input type="text" class="text form-control" ng-model="amigo.
+			nombre" data-animation="am-flip-x" data-title="Escribe el nombre" bs-tooltip/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="txtNombre" class="col-sm-2 form-label">Tlfno:</label>
+		<div class="col-sm-10">
+			<input type="text" class="text form-control" ng-model="amigo.tlfno"/>
+		</div>
+
+	</div>
+	<div class="form-group">
+			
+				<a href="#/amigos" class="btn btn-primary">Cancelar</a>
+				<button class="btn btn-primary" title="Amigo añadido" data-content="El amigo ha sido añadido correctamente" data-placement="top-right" data-container="alert" data duration="3" bs-alert="alert" ng-click="guardar()">Añadir</button>
+				<a href="#/amigos" class="btn btn-danger" ng-click="eliminar()">Borrar</a>
+			
+	</div>
+</form>

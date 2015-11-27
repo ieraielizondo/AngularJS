@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="MiApp">
+<head>
+	<title>Prueba</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>	
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>	
+	<style type="text/css">
+		#contimg{
+			border:1px solid;
+			width: auto;
+			float: left;
+			border-radius: 15px;
+			margin: 5px;
+		}
+		#contimg p {
+			margin-left: 30px;
+
+		}
+
+		#contimg img {			
+			margin: auto 20px auto 20px;
+			display: block;
+		}
+		#contimg img {
+			position: relative;
+			text-align: center;
+			height: 350px;
+			width: 350px;
+
+		}
+	</style>
+</head>
+<body ng-controller="MiCont">
+	<div class="container">
+		<div class="row">				
+			<div class="col-sm-6">
+				<label>Introduce tu nombre.</label>
+					<input type="text" ng-model="nombre" class="form-control input-lg" ng-model="nombre">
+					<button class="btn btn-default" ng-click="actualizarFotos()">Actualizar</button>
+					<div class="alert alert-danger alert-dismissible" role="alert" ng-show="mostrarAlert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times; </span>
+						</button>
+						<strong>Error!</strong> No se ha introducido nada.
+					</div>	
+			</div>
+		</div>				
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div id="fotos" ng-repeat="f in fotos">	
+					<div id="contimg" >	
+						<p>Autor: {{f.author}}</p>
+						<p>Titulo: {{f.title}}</p>
+						<img class="img-circle" src="{{f.media.m}}">
+						<p>Realizado en: {{f.published}}</p>	
+					</div>			
+			</div>			
+		</div>		
+	</div>
+</body>
+</html>
